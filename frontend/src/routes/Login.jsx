@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import MyFormRow from "../components/MyFormRow";
+import FormRow from "../components/FormRow";
 
 function Login() {
   const [validated, setValidated] = useState(false);
@@ -23,8 +23,8 @@ function Login() {
       <Link to="/register"> Already have an account?</Link>
       <Form noValidate validated={validated} className="mt-3" onSubmit={handleSubmit}>
         <>
-          <MyFormRow label="Username" controlAttrs={{required: true, type: "text"}} invalidMsg="Please enter a Username" />
-          <MyFormRow label="Password" controlAttrs={{required: true, type: "password"}} invalidMsg="Please enter a Password" />
+          <FormRow label="Username" controlAttrs={{required: true, type: "text"}} invalidMsg="Please enter a Username" />
+          <FormRow label="Password" controlAttrs={{required: true, type: "password"}} invalidMsg="Please enter a Password" />
         </>
         <Button type="submit">Submit</Button>
       </Form>

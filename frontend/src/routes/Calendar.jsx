@@ -1,9 +1,12 @@
-function Calendar() {
-  return (
-    <div id="calendar-page">
-      Welcome to the Calendar Page
-    </div>
-  );
-}
+import MyCalendar from "../components/MyCalendar";
 
+function Calendar() {
+    return (
+      <div id="calendar-page">
+        <MyCalendar />
+      </div>
+    );
+}
+  
 export default Calendar;
+  

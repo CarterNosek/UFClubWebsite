@@ -1,13 +1,13 @@
 import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { Navbar as BootstrapNavbar } from "react-bootstrap/Navbar";
+import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 
-function Navbar() {
+function MyNavbar() {
     return (
-      <BootstrapNavbar
+      <Navbar
         collapseOnSelect
         expand="lg"
         className="bg-body-tertiary"
@@ -16,10 +16,10 @@ function Navbar() {
         <Container>
           {/* Brand */}
           <LinkContainer to="/">
-            <BootstrapNavbar.Brand>UF Clubs</BootstrapNavbar.Brand>
+            <Navbar.Brand>UF Clubs</Navbar.Brand>
           </LinkContainer>
-          <BootstrapNavbar.Toggle aria-controls="responsive-navbar-nav" />
-          <BootstrapNavbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
             {/* Left Side of NavBar*/}
             <Nav className="me-auto">
               <LinkContainer to="/">
@@ -52,10 +52,10 @@ function Navbar() {
               </NavDropdown>
               {/* )} */}
             </Nav>
-          </BootstrapNavbar.Collapse>
+          </Navbar.Collapse>
         </Container>
-      </BootstrapNavbar>
+      </Navbar>
     );
   }
   
-  export default Navbar;
+  export default MyNavbar;

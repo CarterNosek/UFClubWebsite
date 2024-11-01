@@ -1,18 +1,9 @@
-import React from 'react';
-
-const Home = () => {
+function Home() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'centre',
-        alignItems: 'centre',
-        height: '100vh'
-      }}
-    >
+    <div id="home-page">
       <h1>Welcome to UFClubWebsite</h1>
     </div>
   );
-};
+}
 
 export default Home;

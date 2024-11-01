@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import useToken from './components/App/useToken';
+import Navbar from "./components/Navbar";
+import useToken from "./components/App/useToken";
 
 function App() {
-  const {token, setToken} = useToken();
+  // const {token, setToken} = useToken();
 
   return (
     <>

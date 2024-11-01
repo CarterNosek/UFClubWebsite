@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import './Login.css';
 import PropTypes from 'prop-types';
 
+// TODO Posible helper function???
 async function loginUser(credentials) {
     return fetch('http://localhost:8080/login', {
       method: 'POST',
@@ -12,6 +12,8 @@ async function loginUser(credentials) {
     })
       .then(data => data.json())
    }
+//-------------------------------
+
 
 export default function Login({ setToken }) {
     const [username, setUserName] = useState();

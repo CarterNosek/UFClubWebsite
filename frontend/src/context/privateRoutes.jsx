@@ -1,5 +1,5 @@
 import {Outlet} from 'react-router-dom'
-import Login from '../components/Login/Login'
+import Login from '../services/Login'
 
 // TODO Change to be context provider.
 const PrivateRoutes = ({token, setToken}) => {

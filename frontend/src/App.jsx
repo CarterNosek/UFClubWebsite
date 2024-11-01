@@ -1,29 +1,24 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/navbar';
-import Dashboard from './pages/Dashboard/Dashboard';
-import Calendar from './pages/Calendar/Calendar';
-import Profile from './pages/Profile/Profile';
+import { Outlet } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import useToken from './components/App/useToken';
-import Home from './pages';
-import PrivateRoutes from './components/App/privateRoutes'
 
 function App() {
-  const {token, setToken} = useToken()
+  const {token, setToken} = useToken();
 
   return (
-      <BrowserRouter>
-      <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/calendar" element={<Calendar />}/>
-          <Route element={<PrivateRoutes token={token} setToken={setToken}/>}>
-            <Route path="/dashboard" element={<Dashboard />}/>
-            <Route path="/profile" element={<Profile />}/>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Container>
+          <Outlet />
+        </Container>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
 

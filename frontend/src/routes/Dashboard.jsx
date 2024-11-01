@@ -1,7 +1,9 @@
-import React from 'react';
-
-export default function Dashboard() {
-  return(
-    <h2>Dashboard</h2>
+function Dashboard() {
+  return (
+    <div id="dashboard-page">
+      Welcome to the dashboard.
+    </div>
   );
 }
+
+export default Dashboard;

@@ -1,0 +1,18 @@
+{
+  "name": "uf-club-website",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A website for university clubs to manage club events, attendance, and more!",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently --names \"Node,Vite\" -c \"green,magenta\" \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "sqlz": "npx -w backend sequelize-cli",
+    "start": "npm run build -w frontend && npm run start -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

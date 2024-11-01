@@ -1,6 +1,7 @@
 import {Outlet} from 'react-router-dom'
-import Login from '../Login/Login'
+import Login from '../components/Login/Login'
 
+// TODO Change to be context provider.
 const PrivateRoutes = ({token, setToken}) => {
 return (
     token === true ? <Outlet/> : <Login setToken={setToken} />

@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from '../navbar';
-import Dashboard from '../../pages/Dashboard/Dashboard';
-import Calendar from '../../pages/Calendar/Calendar';
-import Profile from '../../pages/Profile/Profile';
-import useToken from './useToken';
-import Home from '../../pages';
-import PrivateRoutes from './privateRoutes'
+import Navbar from './components/navbar';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Calendar from './pages/Calendar/Calendar';
+import Profile from './pages/Profile/Profile';
+import useToken from './components/App/useToken';
+import Home from './pages';
+import PrivateRoutes from './components/App/privateRoutes'
 
 function App() {
   const {token, setToken} = useToken()

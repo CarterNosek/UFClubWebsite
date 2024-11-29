@@ -3,7 +3,7 @@ import Login from '../Login/Login'
 
 const PrivateRoutes = ({token, setToken}) => {
 return (
-    token === true ? <Outlet/> : <Login setToken={setToken} />
+    token ? <Outlet/> : <Login setToken={setToken} />
   )
 }
 

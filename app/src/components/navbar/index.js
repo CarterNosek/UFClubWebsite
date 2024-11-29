@@ -5,9 +5,7 @@ import {
     Nav,
     NavLink,
     Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink,
+    NavMenu
 } from "./elements";
 
 function Navbar() {
@@ -29,11 +27,6 @@ function Navbar() {
                         Profile
                     </NavLink>
                 </NavMenu>
-                <NavBtn>
-                    <NavBtnLink to="/signin">
-                        Sign In
-                    </NavBtnLink>
-                </NavBtn>
             </Nav>
         </>
     );

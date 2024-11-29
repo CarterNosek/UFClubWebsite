@@ -25,14 +25,28 @@ app.post('/login', (req, res) => {
   const password = req.body.password;
 
   connection.execute('SELECT `password` FROM `member_data` WHERE `username` = ?', [username], function (error, results, fields) {
-    if (error) res.send('error when retrieving data: ' + error.code);
+    if (error) {
+      return res.status(500).send({
+        message: 'Error when retrieving data: ' + error.code
+      });
+    }
+
+    // Check if no user found
+    if (results.length === 0) {
+      return res.status(404).send({
+        message: "Username not found"
+      });
+    }
+
     if(password == results[0]['password']) {
         res.send({
            token: true
         });
     } else {
-        console.log(results);
-        res.send('Invalid password.');
+        res.send({
+          token: false,
+          message: "Invalid Password"
+      });
     }
   });
   
@@ -51,15 +65,24 @@ app.post('/create_event', (req, res) => {
   
 });
 
-app.post('/signup', (req, res) => {
-  //TODO
-  const username = req.body.username
-  const password = req.body.password
+app.post('/register', (req, res) => {
+  const member = [req.body.username, req.body.password, null, null, null, req.body.email];
+  console.log(req.body.username + ':' + req.body.password)
 
-  //CURRENTLY FOR TESTING
-  res.send({
-    token: true
+  connection.execute('INSERT INTO member_data VALUES (?, ?, ?, ?, ?, ?)', member, function (error, results, fields) {
+    if (error) {
+       res.send({
+        message: 'error when registering: ' + error.code,
+        token: false
+      })
+       return;
+    }
+    res.send({
+      message: 'Registered.',
+      token: true
+    });
   });
+  
 });
 
 app.use(express.static('public'))

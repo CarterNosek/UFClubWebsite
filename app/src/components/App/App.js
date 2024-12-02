@@ -17,7 +17,7 @@ function App() {
       <Navbar />
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/calendar" element={<Calendar />}/>
+          <Route path="/calendar" element={<Calendar token={token} />}/>
           <Route element={<PrivateRoutes token={token} setToken={setToken}/>}>
             <Route path="/dashboard" element={<Dashboard />}/>
             <Route path="/profile" element={<Profile />}/>
